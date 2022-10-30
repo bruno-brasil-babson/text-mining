@@ -1,4 +1,4 @@
-# Assignment 2: Analysis of Utopia & Dystopia Movies on IMDb
+# Analysis of Utopia & Dystopia Movies on IMDb
 
 ## Project Overview
 
@@ -6,3 +6,18 @@ In this project, I analyzed similarities and differences related to movies about
 
 ## Implementation
 
+The project's code has two scripts: 
+- `start.py` retrieves data from `cinemagoer` and save it in `data` folder
+- `movies.py` runs analysis on data saved on `data` folder
+
+I decided to save data beforehand because the package takes too long to retrieve the data. As the focus of the project was on analysis, the text analysis would be iterated much more than querying operations. So, when chosing if I should have all my code in just one script, I decided to prioritize iteration speed. Therefore, I split the code in two files based on two types of functions: *analysis* functions, and *querying* functions. The former constitute `movies.py`, while the latter are in `start.py` along with pickle dump processes. 
+
+The data structures and file types to store data from the package were chosen based on the purpose of the data. For example, for the IDs of Utopia and Dystopia movies, I chose to pickle the list, as accessing the list would be much more important than visualizing it. On the other hand, to movies' plots and synopsis, I decided to save them as .txt files, as this are straightforward to read inside a function, while preserving text format so I could read the source data if I needed to. Similarly, synopsis were saved as txt.
+
+In the analysis functions, I chose to use *dictionaries* as main data structure for frequencies. For example, in genre frequency, the dictionary maps genre to number of movies from the list of IDs with such genre. This allowed for a logical map between categorical data and counting appearences, and smooth sorting process by higher frequency.
+
+Finally, I used Python `pandas` package to get summary statistics from a list of sentiment analysis scores. As the size of both sets were considerable (N = 50), just looking at scores was not enough to compare them. So pandas statistics could provide a quick view of numerical data from a list of scores from NLTK package for sentiment analysis.   
+
+## Results
+
+## Reflection

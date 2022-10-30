@@ -8,10 +8,6 @@ import pandas as pd
 
 from sqlalchemy import true
 
-## does actors considered "serious" vs "non-serious" impact on avg review sentiment vs 
-# world-class: di caprio, brad pitt, christian bale
-# "memes": adam sandler, nicolas cage, will smith
-
 ## PROMPT - Sentiment analysis in utopia and dystopias
 # movie attributes: genres (freq.), plot, synopsis, rating, votes ()
 # 1. categorization of utopia/dystopias across genres
