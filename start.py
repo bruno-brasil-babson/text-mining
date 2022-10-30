@@ -83,11 +83,11 @@ dystopia_plots = plots(dystopia_IDs)
 
 # 2.2. pickle list
 
-with open('data/utopia_plots.pickle', 'wb') as f:
-    pickle.dump(utopia_plots, f)
+# with open('data/utopia_plots.pickle', 'wb') as f:
+#     pickle.dump(utopia_plots, f)
 
-with open('data/dystopia_plots.pickle', 'wb') as f:
-    pickle.dump(dystopia_plots, f)
+# with open('data/dystopia_plots.pickle', 'wb') as f:
+#     pickle.dump(dystopia_plots, f)
 
 ## 3. Synopsis ##
 
