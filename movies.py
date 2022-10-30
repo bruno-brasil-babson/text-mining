@@ -32,7 +32,7 @@ with open('data/dystopia_titles.pickle', 'rb') as input_file:
     dystopia_titles = pickle.load(input_file)
 
 # Which movies are in each category?
-print(utopia_titles)
+# print(utopia_titles)
 # print(dystopia_titles)
 
 def intersect(l1, l2, n):
