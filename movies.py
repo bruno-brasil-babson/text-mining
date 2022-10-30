@@ -49,6 +49,31 @@ def intersect(l1, l2, n):
 # Only 3 movies in both "categories". Check below:
 # print(intersect(utopia_titles, dystopia_titles, 50))
 
+## 0.5. Sorting by rating
+def sorted_ratings(ids):
+    d = {}
+    for id in ids:
+        m = ia.get_movie(id)
+        rating = m.get('rating')
+        d[id] = rating
+    
+    sort_ratings = sorted(d.items(), key = lambda x:x[1], reverse = True)
+    return sort_ratings
+
+# utopia_byRanking = sorted_ratings(utopia_IDs)
+# dystopia_byRanking = sorted_ratings(dystopia_IDs)
+
+def top_movie(ids):
+    m = ia.get_movie(ids[0])
+    title = m.get('title')
+    plot = m.get('plot')
+
+    print(title)
+    print(plot)
+    return True
+
+# top_movie(utopia_byRanking)
+
 ## 1. Genre frequency in utopia and dystopia's movies
 
 def genre_freq(ids):
@@ -124,21 +149,22 @@ def intersect_first(l1, l2, n):
     return list(set(s1) & set(s2))
         
 
-wf_utopia_plots = word_freq('data/utopia_plots.txt')
-wf_dystopia_plots = word_freq('data/dystopia_plots.txt')
-# top(wf_utopia_plots, 50)
-# top(wf_dystopia_plots, 50)
-wf_utopia_synopsis = word_freq('data/utopia_synopsis.txt')
-wf_dystopia_synopsis = word_freq('data/dystopia_synopsis.txt')
-print(len(intersect_first(wf_utopia_plots, wf_dystopia_plots, 50)))
-print(len(intersect_first(wf_utopia_synopsis, wf_dystopia_synopsis, 50)))
+# wf_utopia_plots = word_freq('data/utopia_plots.txt')
+# wf_dystopia_plots = word_freq('data/dystopia_plots.txt')
+# # top(wf_utopia_plots, 50)
+# # top(wf_dystopia_plots, 50)
+# wf_utopia_synopsis = word_freq('data/utopia_synopsis.txt')
+# wf_dystopia_synopsis = word_freq('data/dystopia_synopsis.txt')
+
+# print(len(intersect_first(wf_utopia_plots, wf_dystopia_plots, 50)))
+# print(len(intersect_first(wf_utopia_synopsis, wf_dystopia_synopsis, 50)))
 
 ## 3. For both utopia and dystopia, create a function that, for a list of movie id's,
-# return a list of tuples (rating, votes, sentiment['compound']) for each movie's plot
+# return asummary statistics for each movie's plot and synopsis
 
-def plot_sentScore(filename):
+def sentiment_scores(filename):
     """
-    for a list of plots, return a list of their sentiment analysis score 
+    for a list of texts, return a list of their sentiment analysis score 
     """
     fp = open(filename)
     score_list = []
@@ -166,7 +192,16 @@ def summary_stats(scores):
 # print(plot_sentScore('data/utopia_plots.txt'))
 # print(plot_sentScore('data/dystopia_plots.txt'))
 
-# utopia_scores = plot_sentScore('data/utopia_plots.txt')
-# dystopia_scores = plot_sentScore('data/dystopia_plots.txt')
-# # print(summary_stats(utopia_scores))
-# print(summary_stats(dystopia_scores))
+# utopia_plot_scores = sentiment_scores('data/utopia_plots.txt')
+# dystopia_plot_scores = sentiment_scores('data/dystopia_plots.txt')
+# print("Utopia plots (summary stats)")
+# print(summary_stats(utopia_plot_scores))
+# print("Dystopia plots (summary stats)")
+# print(summary_stats(dystopia_plot_scores))
+
+utopia_synopsis_scores = sentiment_scores('data/utopia_synopsis.txt')
+dystopia_synopsis_scores = sentiment_scores('data/dystopia_synopsis.txt')
+print("Utopia synopsis (summary stats)")
+print(summary_stats(utopia_synopsis_scores))
+print("Dystopia synopsis (summary stats)")
+print(summary_stats(dystopia_synopsis_scores))
