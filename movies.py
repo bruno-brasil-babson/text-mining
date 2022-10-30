@@ -109,6 +109,7 @@ def top(l, n):
     """
     for i in range(n):
         print(l[i])
+    print("\n")
     return True
 
 def intersect_first(l1, l2, n):
@@ -123,11 +124,14 @@ def intersect_first(l1, l2, n):
     return list(set(s1) & set(s2))
         
 
-# wf_utopia = word_freq('data/utopia_plots.txt')
-# wf_dystopia = word_freq('data/dystopia_plots.txt')
-# # top(wf_utopia, 50)
-# # top(wf_dystopia, 50)
-# print(intersect(wf_utopia, wf_dystopia, 100))
+wf_utopia_plots = word_freq('data/utopia_plots.txt')
+wf_dystopia_plots = word_freq('data/dystopia_plots.txt')
+# top(wf_utopia_plots, 50)
+# top(wf_dystopia_plots, 50)
+wf_utopia_synopsis = word_freq('data/utopia_synopsis.txt')
+wf_dystopia_synopsis = word_freq('data/dystopia_synopsis.txt')
+print(len(intersect_first(wf_utopia_plots, wf_dystopia_plots, 50)))
+print(len(intersect_first(wf_utopia_synopsis, wf_dystopia_synopsis, 50)))
 
 ## 3. For both utopia and dystopia, create a function that, for a list of movie id's,
 # return a list of tuples (rating, votes, sentiment['compound']) for each movie's plot
@@ -162,7 +166,7 @@ def summary_stats(scores):
 # print(plot_sentScore('data/utopia_plots.txt'))
 # print(plot_sentScore('data/dystopia_plots.txt'))
 
-utopia_scores = plot_sentScore('data/utopia_plots.txt')
-dystopia_scores = plot_sentScore('data/dystopia_plots.txt')
-# print(summary_stats(utopia_scores))
-print(summary_stats(dystopia_scores))
+# utopia_scores = plot_sentScore('data/utopia_plots.txt')
+# dystopia_scores = plot_sentScore('data/dystopia_plots.txt')
+# # print(summary_stats(utopia_scores))
+# print(summary_stats(dystopia_scores))

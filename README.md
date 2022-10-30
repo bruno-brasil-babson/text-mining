@@ -20,4 +20,15 @@ Finally, I used Python `pandas` package to get summary statistics from a list of
 
 ## Results
 
+After doing keyword search for Utopia and Dystopia in IMDb movies and shows' dataset, we get 50 movies in each. First, I checked how many movies where in both. To my surprise, only 3: Watchmen, THX 1138, and Total Recall. 
+
+When looking at genres frequency, we learn that 31 out of the 50 utopia movies are in the "Sci-Fi" category, yet, in dystopia they are 43! Indeed, if we look at the other top genres in dystopia, we can have an idea of what Hollywood values in distopian movies: "Sci-fi, Action, Thriller, Drama". On the other side, half (25) of utopian movies are in the "Adventure" genre, showing how utopic stories fit in a lighter spectrum than dystopic ones. Still, genres are mostly similar across these categories, highlighting once again common themes in these stories. 
+
+For plots and synopsis, we take a look on which words appear the most. Recalling what they mean, plot is a short description of the main theme of the movie, while synopsis is a much more detailed version of the full story. The method chosen was to check the top 50 words in frequency among plots, and compare across categories, then later do the same for synopsis. 
+
+**Common words in top 50 among utopia vs. dystopia plots (42)**
+![plots_freq](images/plots_freq.jpg)
+**Common words in top 50 among utopia vs. dystopia synopsis (47)**
+![synopsis_freq](images/synopsis_freq.jpg)
+
 ## Reflection
