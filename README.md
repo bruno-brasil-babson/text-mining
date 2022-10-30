@@ -42,10 +42,10 @@ Finally, we can look at **sentiment analysis** upon plots and synopsis across ca
 
 After running compound scores for all plots and synopsis for the 50 movies in each categories, we have the following results:
 
-**Plots sentiment score stats for utopia vs. dystopia**__
+**Plots sentiment score stats for utopia vs. dystopia**<br />
 ![plots_stats](images/plots_stats.jpg)
 
-**Synopsis sentiment score stats for utopia vs. dystopia**__
+**Synopsis sentiment score stats for utopia vs. dystopia**<br />
 ![synopsis_stats](images/synopsis_stats.jpg)
 
 Some key learnings from stats and benchmarks:
