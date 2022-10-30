@@ -9,10 +9,10 @@ import pandas as pd
 from sqlalchemy import true
 
 ## PROMPT - Sentiment analysis in utopia and dystopias
-# movie attributes: genres (freq.), plot, synopsis, rating, votes ()
+# movie attributes: genres, plot, synopsis, rating
 # 1. categorization of utopia/dystopias across genres
 # 2. most common words in plot & synopsis
-# 3. does movie with good ratings have more intense plot & synopsis (sentiment analysis)
+# 3. plot & synopsis sentiment analysis (summary stats)
 
 with open('data/utopia.pickle', 'rb') as input_file:
     utopia_IDs = pickle.load(input_file)
@@ -49,31 +49,6 @@ def intersect(l1, l2, n):
 # Only 3 movies in both "categories". Check below:
 # print(intersect(utopia_titles, dystopia_titles, 50))
 
-## 0.5. Sorting by rating
-def sorted_ratings(ids):
-    d = {}
-    for id in ids:
-        m = ia.get_movie(id)
-        rating = m.get('rating')
-        d[id] = rating
-    
-    sort_ratings = sorted(d.items(), key = lambda x:x[1], reverse = True)
-    return sort_ratings
-
-# utopia_byRanking = sorted_ratings(utopia_IDs)
-# dystopia_byRanking = sorted_ratings(dystopia_IDs)
-
-def top_movie(ids):
-    m = ia.get_movie(ids[0])
-    title = m.get('title')
-    plot = m.get('plot')
-
-    print(title)
-    print(plot)
-    return True
-
-# top_movie(utopia_byRanking)
-
 ## 1. Genre frequency in utopia and dystopia's movies
 
 def genre_freq(ids):
@@ -94,14 +69,16 @@ def genre_freq(ids):
     sort_genres = sorted(d.items(), key = lambda x:x[1], reverse = True)
     return sort_genres
 
-# print("Utopia genres are:", genre_freq(utopia_IDs))
-# print("Dystopia genres are:", genre_freq(dystopia_IDs))
+print("Utopia genres are:")
+print(genre_freq(utopia_IDs))
+print("Dystopia genres are:")
+print(genre_freq(dystopia_IDs))
 
 
 ## 2. For both utopia and dystopia, create a function that, for a list of movie id's,
 # return a dict of words:(frequency of words in movies' plot), and other to
 # return a dict of words:(frequency of words in movies' synopsis),
-# both sorted by values -> we want top100 in each to compare
+# both sorted by values -> we want top50 in each to compare
 
 def word_freq(filename):
     """
@@ -139,7 +116,7 @@ def top(l, n):
 
 def intersect_first(l1, l2, n):
     """
-    returns the intersection of two lists' N first pairs
+    returns the intersection of two lists of tuples for their first elements
     """
     s1 = []
     s2 = []
@@ -156,11 +133,11 @@ def intersect_first(l1, l2, n):
 # wf_utopia_synopsis = word_freq('data/utopia_synopsis.txt')
 # wf_dystopia_synopsis = word_freq('data/dystopia_synopsis.txt')
 
-# print(len(intersect_first(wf_utopia_plots, wf_dystopia_plots, 50)))
-# print(len(intersect_first(wf_utopia_synopsis, wf_dystopia_synopsis, 50)))
+# print(intersect_first(wf_utopia_plots, wf_dystopia_plots, 50))
+# print(intersect_first(wf_utopia_synopsis, wf_dystopia_synopsis, 50))
 
 ## 3. For both utopia and dystopia, create a function that, for a list of movie id's,
-# return asummary statistics for each movie's plot and synopsis
+# return summary statistics for each movie's plot and synopsis
 
 def sentiment_scores(filename):
     """

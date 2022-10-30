@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-In this project, I analyzed similarities and differences related to movies about utopias and/or dystopias. The motivation to that is my LTA class, which is about that them, and has shown me how thin the border between these ideas can be. The data source was the `cinemagoer` package, which provided a range of information about movies and allowed to query on my 2 chosen keywords. The study consisted of analysis across the two categories, be it genre frequency, most common words in the movies' plots and synopsis, and plots' sentiment analysis.
+In this project, I analyzed similarities and differences related to movies about utopias and/or dystopias. The motivation to that is my LTA class, which is about that, and has shown me how thin the border between these ideas can be. The data source was the `cinemagoer` package, which provided a range of information about movies and allowed to query on my 2 chosen keywords. The study consisted of analysis across the two categories, be it genre frequency, most common words in the movies' plots and synopsis, and plots and synopsis' sentiment analysis.
 
 ## Implementation
 
@@ -22,7 +22,9 @@ Finally, I used Python `pandas` package to get summary statistics from a list of
 
 After doing keyword search for Utopia and Dystopia in IMDb movies and shows' dataset, we get 50 movies in each. First, I checked how many movies where in both. To my surprise, only 3: Watchmen, THX 1138, and Total Recall. 
 
-When looking at **genres frequency**, we learn that 31 out of the 50 utopia movies are in the "Sci-Fi" category, yet, in dystopia they are 43! Indeed, if we look at the other top genres in dystopia, we can have an idea of what Hollywood values in distopian movies: "Sci-fi, Action, Thriller, Drama". On the other side, half (25) of utopian movies are in the "Adventure" genre, showing how utopic stories fit in a lighter spectrum than dystopic ones. Still, genres are mostly similar across these categories, highlighting once again common themes in these stories. 
+When looking at **genres frequency**, we learn that 31 out of the 50 utopia movies are in the "Sci-Fi" category, yet, in dystopia they are 43 (almost all!). Indeed, if we look at the other top genres in dystopia, we can have an idea of what Hollywood values in distopian movies: "Sci-fi, Action, Thriller, Drama". On the other side, half (25) of utopian movies are in the "Adventure" genre, showing how utopic stories fit in a lighter spectrum than dystopic ones. Still, genres are mostly similar across these categories, highlighting once again common themes in these stories. 
+
+![genres](images/genres.jpg)
 
 For **plots and synopsis**, we take a look on which words appear the most. Recalling what they mean, plot is a short description of the main theme of the movie, while synopsis is a much more detailed version of the full story. The method chosen was to check the top 50 words in frequency among plots, and compare across categories, then later do the same for synopsis. 
 
@@ -62,4 +64,4 @@ I believe my scope was good, but looking back my content could have been more in
 All in all, I think I learned how to:
 1. Understand the data I need based on the question I want to answer
 2. Storing and retrieving data to increase performance to focus on data analysis
-3. Manipulate different data structures with functions to find top themes and similarities (intersections)
+3. Manipulate different data structures with functions to find insights (top themes, similarities, etc)

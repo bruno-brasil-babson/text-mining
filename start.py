@@ -11,6 +11,9 @@ dystopia = ia.get_keyword('dystopia')
 
 ## 0. IDs ##
 def id(movies):
+    """
+    for a list of movies, return a list of their movie IDs
+    """
     movie_ids = []
     for i in range(len(movies)):
         id = movies[i].movieID
@@ -35,6 +38,9 @@ with open('data/dystopia.pickle', 'wb') as f:
 ## 1. Titles ##
 
 def titles(ids):
+    """
+    for a list of movie IDs, return a dict mapping ID:(movie titles)
+    """
     titles = []
     for id in ids:
         m = ia.get_movie(id)
@@ -54,6 +60,9 @@ def titles(ids):
 ## 2. Plots ##
 
 def plots(ids):
+    """
+    for a list of movie IDs, return a dict mapping ID:(movie plots)
+    """
     d = {}
     for id in ids:
         m = ia.get_movie(id)
@@ -83,6 +92,9 @@ with open('data/dystopia_plots.pickle', 'wb') as f:
 ## 3. Synopsis ##
 
 def synopsis(ids):
+    """
+    for a list of movie IDs, return a dict mapping ID:(movie synopsis)
+    """
     d = {}
     for id in ids:
         m = ia.get_movie(id)
