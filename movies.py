@@ -32,7 +32,7 @@ with open('data/dystopia_titles.pickle', 'rb') as input_file:
     dystopia_titles = pickle.load(input_file)
 
 # Which movies are in each category?
-# print(utopia_titles)
+print(utopia_titles)
 # print(dystopia_titles)
 
 def intersect(l1, l2, n):
@@ -199,9 +199,9 @@ def summary_stats(scores):
 # print("Dystopia plots (summary stats)")
 # print(summary_stats(dystopia_plot_scores))
 
-utopia_synopsis_scores = sentiment_scores('data/utopia_synopsis.txt')
-dystopia_synopsis_scores = sentiment_scores('data/dystopia_synopsis.txt')
-print("Utopia synopsis (summary stats)")
-print(summary_stats(utopia_synopsis_scores))
-print("Dystopia synopsis (summary stats)")
-print(summary_stats(dystopia_synopsis_scores))
+# utopia_synopsis_scores = sentiment_scores('data/utopia_synopsis.txt')
+# dystopia_synopsis_scores = sentiment_scores('data/dystopia_synopsis.txt')
+# print("Utopia synopsis (summary stats)")
+# print(summary_stats(utopia_synopsis_scores))
+# print("Dystopia synopsis (summary stats)")
+# print(summary_stats(dystopia_synopsis_scores))

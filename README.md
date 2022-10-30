@@ -28,6 +28,7 @@ For **plots and synopsis**, we take a look on which words appear the most. Recal
 
 **Common words in top 50 among utopia vs. dystopia plots (42)**
 ![plots_freq](images/plots_freq.jpg)
+
 **Common words in top 50 among utopia vs. dystopia synopsis (47)**
 ![synopsis_freq](images/synopsis_freq.jpg)
 
@@ -43,8 +44,14 @@ After running compound scores for all plots and synopsis for the 50 movies in ea
 
 **Plots sentiment score stats for utopia vs. dystopia**
 ![plots_stats](images/plots_stats.jpg)
+
 **Synopsis sentiment score stats for utopia vs. dystopia**
 ![synopsis_stats](images/synopsis_stats.jpg)
+
+Some key learnings from stats and benchmarks:
+- Most of the movies in both categories have quite negative plots. Still, when looking at synopsis, we see how negative the dystopic stories are, with the median compound score around -0.99!
+- Utopia movie plots score considerably higher in positivity than their synopsis, which might lead to believe that there might be some plot twists...
+- Plots have much higher standard deviation in scores than synopsis. This probably is due the fact that plots are much shorter, having to be straight to the point, and varying more in intensity that complete storylines
 
 ## Reflection
 
