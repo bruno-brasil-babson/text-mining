@@ -29,11 +29,11 @@ with open('data/utopia.pickle', 'wb') as f:
 with open('data/dystopia.pickle', 'wb') as f:
     pickle.dump(dystopia_IDs, f)
 
-# with open('data/utopia.pickle', 'rb') as input_file:
-#     utopia_IDs = pickle.load(input_file)
+with open('data/utopia.pickle', 'rb') as input_file:
+    utopia_IDs = pickle.load(input_file)
 
-# with open('data/dystopia.pickle', 'rb') as input_file:
-#     dystopia_IDs = pickle.load(input_file)
+with open('data/dystopia.pickle', 'rb') as input_file:
+    dystopia_IDs = pickle.load(input_file)
 
 ## 1. Titles ##
 
@@ -48,14 +48,14 @@ def titles(ids):
         titles.append(title)
     return titles
 
-# utopia_titles = titles(utopia_IDs)
-# dystopia_titles = titles(dystopia_IDs)
+utopia_titles = titles(utopia_IDs)
+dystopia_titles = titles(dystopia_IDs)
 
-# with open('data/utopia_titles.pickle', 'wb') as f:
-#     pickle.dump(utopia_titles, f)
+with open('data/utopia_titles.pickle', 'wb') as f:
+    pickle.dump(utopia_titles, f)
 
-# with open('data/dystopia_titles.pickle', 'wb') as f:
-#     pickle.dump(dystopia_titles, f)
+with open('data/dystopia_titles.pickle', 'wb') as f:
+    pickle.dump(dystopia_titles, f)
 
 ## 2. Plots ##
 
@@ -69,10 +69,9 @@ def plots(ids):
         d[id] = m.get('plot')
     return d
 
-utopia_plots = plots(utopia_IDs)
-dystopia_plots = plots(dystopia_IDs)
+# utopia_plots = plots(utopia_IDs)
+# dystopia_plots = plots(dystopia_IDs)
 
-# 2.1. txt file
 # with open('data/utopia_plots.txt', 'w') as f:
 #     for plot in utopia_plots.values():
 #         f.write("%s\n" % plot)
@@ -80,14 +79,6 @@ dystopia_plots = plots(dystopia_IDs)
 # with open('data/dystopia_plots.txt', 'w') as f:
 #     for plot in dystopia_plots.values():
 #         f.write("%s\n" % plot)
-
-# 2.2. pickle list
-
-# with open('data/utopia_plots.pickle', 'wb') as f:
-#     pickle.dump(utopia_plots, f)
-
-# with open('data/dystopia_plots.pickle', 'wb') as f:
-#     pickle.dump(dystopia_plots, f)
 
 ## 3. Synopsis ##
 
