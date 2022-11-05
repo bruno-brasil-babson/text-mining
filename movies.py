@@ -69,10 +69,10 @@ def genre_freq(ids):
     sort_genres = sorted(d.items(), key = lambda x:x[1], reverse = True)
     return sort_genres
 
-print("Utopia genres are:")
-print(genre_freq(utopia_IDs))
-print("Dystopia genres are:")
-print(genre_freq(dystopia_IDs))
+# print("Utopia genres are:")
+# print(genre_freq(utopia_IDs))
+# print("Dystopia genres are:")
+# print(genre_freq(dystopia_IDs))
 
 
 ## 2. For both utopia and dystopia, create a function that, for a list of movie id's,
@@ -182,3 +182,37 @@ def summary_stats(scores):
 # print(summary_stats(utopia_synopsis_scores))
 # print("Dystopia synopsis (summary stats)")
 # print(summary_stats(dystopia_synopsis_scores))
+
+
+def main():
+    # 1. Genre frequency in utopia and dystopia's movies
+    print("Utopia genres are:")
+    print(genre_freq(utopia_IDs))
+    print("Dystopia genres are:")
+    print(genre_freq(dystopia_IDs))
+
+    # 2. Plot and synopsis intersection word analysis
+    wf_utopia_plots = word_freq('data/utopia_plots.txt')
+    wf_dystopia_plots = word_freq('data/dystopia_plots.txt')
+    wf_utopia_synopsis = word_freq('data/utopia_synopsis.txt')
+    wf_dystopia_synopsis = word_freq('data/dystopia_synopsis.txt')
+    print(intersect_first(wf_utopia_plots, wf_dystopia_plots, 50))
+    print(intersect_first(wf_utopia_synopsis, wf_dystopia_synopsis, 50))
+
+    # 3. Summary statistics of plot and synopsis sentiment analysis
+    utopia_plot_scores = sentiment_scores('data/utopia_plots.txt')
+    dystopia_plot_scores = sentiment_scores('data/dystopia_plots.txt')
+    print("Utopia plots (summary stats)")
+    print(summary_stats(utopia_plot_scores))
+    print("Dystopia plots (summary stats)")
+    print(summary_stats(dystopia_plot_scores))
+
+    utopia_synopsis_scores = sentiment_scores('data/utopia_synopsis.txt')
+    dystopia_synopsis_scores = sentiment_scores('data/dystopia_synopsis.txt')
+    print("Utopia synopsis (summary stats)")
+    print(summary_stats(utopia_synopsis_scores))
+    print("Dystopia synopsis (summary stats)")
+    print(summary_stats(dystopia_synopsis_scores))
+
+if __name__ == '__main__':
+    main()
